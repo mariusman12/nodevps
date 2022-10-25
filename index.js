@@ -8,18 +8,18 @@ const port = 3000;
 app.use(cors());
 
 app.use(morgan("dev"));
-app.get("/", (req, res) => {
+app.get("/api", (req, res) => {
   res.send("Hello World / !");
 });
 app.use(bodyParser.json({ limit: "50mb" }));
-app.get("/add", (req, res) => {
+app.get("/api/add", (req, res) => {
   res.send("Hello World add!");
 });
 
-app.get("/add2", (req, res) => {
+app.get("/api/add2", (req, res) => {
   res.send("Hello World add2!");
 });
-app.get("/getData", (req, res) => {
+app.get("/api/getData", (req, res) => {
   fetch("https://reqres.in/api/users")
     .then((res) => res.json())
     .then((data) => console.log(data));
